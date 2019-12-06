@@ -64,7 +64,7 @@
 							 'container_class'	=> 'navbar-collapse collapse',
 							 'menu_class'		=> 'nav navbar-nav navbar-right'
 						 ));
-					?>;
+					?>
 
                 </div> <!-- container end -->
             </div> <!-- navbar end -->
