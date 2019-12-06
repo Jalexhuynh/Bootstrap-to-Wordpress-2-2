@@ -84,11 +84,11 @@
         </div> <!-- modal-dialog end -->
     </div> <!-- modal end -->
 
-<!-- ========== BOOTSTRAP CORE JAVASCRIPT ========== -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/jquery-2.1.1.min.js"></script>
-<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/main.js"></script>
-
+	<!-- ========== BOOTSTRAP CORE JAVASCRIPT ========== -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/jquery-2.1.1.min.js"></script>
+	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/bootstrap.min.js"></script>
+	<script src="<?php bloginfo( 'template_directory' ); ?>/assets/js/main.js"></script>
+</div>
 </body>
 </html>
