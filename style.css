@@ -339,10 +339,6 @@ object {
 	display: block;
 }
 
-/*--------------------------------------------------------------
-# Theme Specific Styles
---------------------------------------------------------------*/
-
 /* COLOR REFERENCES 
 
 Green:      #79B044
@@ -358,10 +354,6 @@ body {
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
     background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
-}
-
-.logged-in .navbar-fixed-top {
-	top: 32px;
 }
 
 /* ========== GLOBAL ========== */
@@ -580,7 +572,7 @@ form textarea {
     position: relative;
     display: table;
     width: 100%;
-    padding: 40px 0;
+    padding: 70px 0 40px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     color: white;
@@ -1011,13 +1003,6 @@ i.ci {
 	}
 }
 
-/* Fix navbar positioning when logged in. */
-@media screen and (max-width: 782px) {
-	.logged-in .navbar-fixed-top {
-		top: 46px;
-	}
-}
-
 @media screen and (max-width : 768px) {
 	.logo {
 		width: 50%;
@@ -1034,13 +1019,6 @@ i.ci {
 	.resource {
 		width: 48%;
 		margin-right: 2%;
-	}
-}
-
-/* Fix navbar positioning when logged in. */
-@media screen and (max-width: 600px) {
-	.logged-in .navbar-fixed-top {
-		top: 42px;
 	}
 }
 
