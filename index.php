@@ -15,8 +15,16 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">
+		<h1 class="page-title">Blog</h1>
+	</section>
+
+	<!-- BLOG CONTENT
+	================================================== -->
+	<div class="container">
+		<div class="row" id="primary">
+		
+			<main id="content" class="col-sm-8" role="main">
 
 		<?php
 		if ( have_posts() ) :
@@ -51,9 +59,18 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			</main> <!-- end main -->
+
+		    <!-- SIDEBAR
+			================================================== -->
+		    <aside class="col-sm-4">
+
+			<?php get_sidebar(); ?>
+
+			</aside> <!-- end sidebar -->
+
+		</div> <!-- end row primary -->
+	</div> <!-- end container -->
 
 <?php
-get_sidebar();
 get_footer();
