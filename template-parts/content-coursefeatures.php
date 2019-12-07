@@ -40,7 +40,7 @@ $features_section_body          = get_field( 'features_section_body');
                     <h4><?php the_title(); ?></h4>
                 </div> <!-- col end -->
 
-            <?php endwhile; ?>
+            <?php endwhile; wp_reset_query();?>
 
         </div> <!-- row end -->
 

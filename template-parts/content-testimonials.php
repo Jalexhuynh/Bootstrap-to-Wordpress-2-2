@@ -33,7 +33,7 @@
                     </div><!-- end col -->
                 </div><!-- row -->
 
-                <?php endwhile; ?>
+                <?php endwhile; wp_reset_query();?>
                 
             </div><!-- end col -->
             
