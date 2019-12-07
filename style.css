@@ -43,6 +43,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Theme Specific Styles
 --------------------------------------------------------------*/
 
+.navbar-nav li.current_page_item a,
+.navbar-nav li.current_pare_parent a {
+	color: white;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
