@@ -3,15 +3,6 @@
     Template Name: Home Page
  */
 
-// Advanced Custom Fields
-$income_feature_image           = get_field( 'income_feature_image' );
-$income_section_title           = get_field( 'income_section_title' );
-$income_section_description     = get_field( 'income_section_description' );
-$reason_1_title                 = get_field( 'reason_1_title' );
-$reason_1_description           = get_field( 'reason_1_description' );
-$reason_2_title                 = get_field( 'reason_2_title' );
-$reason_2_description           = get_field( 'reason_2_description' );
-
 $who_feature_image              = get_field( 'who_feature_image' );
 $who_section_title              = get_field( 'who_section_title' );
 $who_section_body               = get_field( 'who_section_body' );
@@ -37,91 +28,11 @@ $num_courses                    = get_field ( 'num_courses' );
 
 get_header(); ?>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section id="hero" data-type="background" data-speed="5">
+    <?php get_template_part( 'template-parts/content', 'hero' ); ?>
 
-        <article>
-            <div class="container clearfix">
-                <div class="row">
+    <?php get_template_part( 'template-parts/content', 'optin' ); ?>
 
-                    <div class="col-sm-5">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.png" alt="Bootstrap to Wordpress" class="logo">
-                    </div> <!-- col end -->
-                    <div class="col-sm-7 hero-text">
-                        <h1><?php bloginfo('name'); ?></h1>
-                        <p class="lead"><?php bloginfo('description'); ?></p>
-                        <div id="price-timeline">
-                            <div class="price active">
-                                <h4>Pre-Launch Price <small>Ends soon!</small></h4>
-                                <span><?php the_field( 'prelaunch_price' ); ?></span>
-                            </div> <!-- price end -->
-                            <div class="price active">
-                                <h4>Launch Price <small>Coming soon!</small></h4>
-                                <span><?php the_field( 'launch_price' ); ?></span>
-                            </div> <!-- price end -->
-                            <div class="price active">
-                                <h4>Final Price <small>Coming soon!</small></h4>
-                                <span><?php the_field( 'final_price' ); ?></span>
-                            </div> <!-- price end -->
-                        </div> <!-- price-timeline end -->
-                        <p><a href="<?php the_field( 'course_url' ); ?>" class="btn btn-lg btn-danger" role="button"><?php the_field( 'button_text' ); ?> &raquo;</a></p>
-                    </div> <!-- col end -->
-
-                </div> <!-- row end -->
-            </div> <!-- container end -->
-        </article>
-
-    </section> <!-- hero end -->
-
-    <!-- ========== OPT-IN SECTION ========== -->
-    <section id="optin">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-8">
-                    <p class="lead"><?php the_field( 'optin_text' ); ?></p>
-                </div> <!-- col end -->
-
-                <div class="col-sm-4">
-                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal"><?php the_field( 'optin_button_text' ); ?></button>
-                </div> <!-- col end -->
-
-            </div> <!-- row end -->
-        </div> <!-- container end -->
-
-    </section> <!-- optin end -->
-
-    <!-- ========== BOOST INCOME ========== -->
-    <section id="boost-income">
-
-        <div class="container">
-            <div class="section-header">
-
-            <!-- Checks if user uploaded an image -->
-            <?php if ( $income_feature_image ) : ?>
-                <img src="<?php echo $income_feature_image['url']; ?>" alt="<?php echo $income_feature_image['alt']; ?>" />
-            <?php endif; ?>
-
-            <h2><?php echo $income_section_title ?></h2>
-            </div> <!-- section-header end -->
-
-            <p class="lead"><?php echo $income_section_description ?></p>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3><?php echo $reason_1_title ?></h3>
-                    <p><?php echo $reason_1_description ?></p>
-                </div> <!-- col end -->
-                <div class="col-sm-6">
-                    <h3><?php echo $reason_2_title ?></h3>
-                    <p><?php echo $reason_2_description ?></p>
-                </div> <!-- col end -->
-            </div>
-
-        </div> <!-- containter end -->
-
-    </section> <!-- boost-income end -->
+    <?php get_template_part( 'template-parts/content', 'content-boost' ); ?>
 
     <!-- ========== WHO BENEFITS ========== -->
     <section id="who-benefits">
