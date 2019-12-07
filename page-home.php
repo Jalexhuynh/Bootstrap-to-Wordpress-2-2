@@ -4,16 +4,22 @@
  */
 
 // Advanced Custom Fields
-$income_feature_image           = get_field('income_feature_image');
-$income_section_title           = get_field('income_section_title');
-$income_section_description     = get_field('income_section_description');
-$reason_1_title                 = get_field('reason_1_title');
-$reason_1_description           = get_field('reason_1_description');
-$reason_2_title                 = get_field('reason_2_title');
-$reason_2_description           = get_field('reason_2_description');
+$income_feature_image           = get_field( 'income_feature_image' );
+$income_section_title           = get_field( 'income_section_title' );
+$income_section_description     = get_field( 'income_section_description' );
+$reason_1_title                 = get_field( 'reason_1_title' );
+$reason_1_description           = get_field( 'reason_1_description' );
+$reason_2_title                 = get_field( 'reason_2_title' );
+$reason_2_description           = get_field( 'reason_2_description' );
+
 $who_feature_image              = get_field( 'who_feature_image' );
 $who_section_title              = get_field( 'who_section_title' );
 $who_section_body               = get_field( 'who_section_body' );
+
+$features_section_image         = get_field( 'features_section_image');
+$features_section_title         = get_field( 'features_section_title');
+$features_section_body          = get_field( 'features_section_body');
+
 
 get_header(); ?>
 
@@ -131,45 +137,38 @@ get_header(); ?>
 
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-rocket.png" alt="rocket">
-                <h2>Course Features</h2>
+                <!-- Checks if user uploaded an image -->
+                <?php if ( $features_section_image ) : ?>
+                    <img src="<?php echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>" />
+                <?php endif; ?>
+
+                <h2><?php echo $features_section_title ?></h2>
+
+                <!-- Checks if user added body text -->
+                <?php if ( $features_section_body ) : ?>
+                    <p class="lead"><?php echo $features_section_body ?></p>
+                <?php endif; ?>
+
             </div> <!-- section-header end -->
 
             <div class="row">
 
-                <div class='col-sm-2'>
-                    <i class="ci ci-computer"></i>
-                    <h4>Lifetime access to 80+ lectures</h4>
-                </div> <!-- col end -->
+                <!-- Creates loop to loop through custom post types and adds each feature's ACF fields -->
+                <?php $loop = new WP_Query( array( 
+                    'post_type'     => 'course_feature', 
+                    'order_by'      => 'post_id', 
+                    'order'         => 'ASC' 
+                    ) ); ?>
+                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-                <div class='col-sm-2'>
-                    <i class="ci ci-watch"></i>
-                    <h4>10+ hours of HD video content</h4>
-                </div> <!-- col end -->
+                    <div class='col-sm-2'>
+                        <i class="<?php the_field('course_feature_icon'); ?>"></i>
+                        <h4><?php the_title(); ?></h4>
+                    </div> <!-- col end -->
 
-                <div class='col-sm-2'>
-                    <i class="ci ci-calendar"></i>
-                    <h4>30 day money back guaranteet</h4>
-                </div> <!-- col end -->
-
-                <div class='col-sm-2'>
-                    <i class="ci ci-community"></i>
-                    <h4>Access to a community of like-minded students</h4>
-                </div> <!-- col end -->
-
-                <div class='col-sm-2'>
-                    <i class="ci ci-instructor"></i>
-                    <h4>Direct acccess to the instructor</h4>
-                </div> <!-- col end -->
-
-                <div class='col-sm-2'>
-                    <i class="ci ci-device"></i>
-                    <h4>Accessible content on your mobile devices</h4>
-                </div> <!-- col end -->
+                <?php endwhile; ?>
 
             </div> <!-- row end -->
-
-
 
         </div> <!-- container end -->
 
