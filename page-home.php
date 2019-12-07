@@ -3,8 +3,7 @@
     Template Name: Home Page
  */
 
-get_header();
-?>
+get_header(); ?>
 
     <!-- ========== HERO SECTION ========== -->
     <section id="hero" data-type="background" data-speed="5">
@@ -18,22 +17,22 @@ get_header();
                     </div> <!-- col end -->
                     <div class="col-sm-7 hero-text">
                         <h1><?php bloginfo('name'); ?></h1>
-                        <p class="lead"><?php bloginfo('tagline'); ?></p>
+                        <p class="lead"><?php bloginfo('description'); ?></p>
                         <div id="price-timeline">
                             <div class="price active">
                                 <h4>Pre-Launch Price <small>Ends soon!</small></h4>
-                                <span>$149</span>
+                                <span><?php the_field( 'prelaunch_price' ); ?></span>
                             </div> <!-- price end -->
                             <div class="price active">
                                 <h4>Launch Price <small>Coming soon!</small></h4>
-                                <span>$299</span>
+                                <span><?php the_field( 'launch_price' ); ?></span>
                             </div> <!-- price end -->
                             <div class="price active">
                                 <h4>Final Price <small>Coming soon!</small></h4>
-                                <span>$399</span>
+                                <span><?php the_field( 'final_price' ); ?></span>
                             </div> <!-- price end -->
                         </div> <!-- price-timeline end -->
-                        <p><a href="/" class="btn btn-lg btn-danger" role="button">Enroll &raquo;</a></p>
+                        <p><a href="<?php the_field( 'course_url' ); ?>" class="btn btn-lg btn-danger" role="button"><?php the_field( 'button_text' ); ?> &raquo;</a></p>
                     </div> <!-- col end -->
 
                 </div> <!-- row end -->
@@ -49,13 +48,11 @@ get_header();
             <div class="row">
 
                 <div class="col-sm-8">
-                    <p class="lead"><strong>Subscribe to our mailing list</strong> We'll send something special as a thank you.</p>
+                    <p class="lead"><?php the_field( 'optin_text' ); ?></p>
                 </div> <!-- col end -->
 
                 <div class="col-sm-4">
-                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-                        Click here to subscribe
-                    </button>
+                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal"><?php the_field( 'optin_button_text' ); ?></button>
                 </div> <!-- col end -->
 
             </div> <!-- row end -->
