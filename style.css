@@ -356,6 +356,10 @@ body {
     background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
 }
 
+.logged-in .navbar-fixed-top {
+	top: 32px;
+}
+
 /* ========== GLOBAL ========== */
 
 h1, h2, h3, h4, h5, h6 {
@@ -1003,6 +1007,12 @@ i.ci {
 	}
 }
 
+@media screen and (max-width : 782px) {
+	.logged-in .navbar-fixed-top {
+		top: 46px;
+	}
+}
+
 @media screen and (max-width : 768px) {
 	.logo {
 		width: 50%;
@@ -1019,6 +1029,12 @@ i.ci {
 	.resource {
 		width: 48%;
 		margin-right: 2%;
+	}
+}
+
+@media screen and (max-width : 600px) {
+	.logged-in .navbar-fixed-top {
+		top: 42px;
 	}
 }
 
