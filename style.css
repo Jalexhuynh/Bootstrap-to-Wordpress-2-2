@@ -959,6 +959,20 @@ i.ci {
 	border-top: solid 1px #eee;
 }
 
+/* Specific Wordpress Comment Styles */
+#comments footer {
+	background: none;
+	color: inherit;
+}
+
+#comments footer a {
+	color: inherit;
+}
+
+#comments .comment-meta-data {
+	margin: 10px 0 0;
+}
+
 /* === WIDGETS === */
 
 .widget {
