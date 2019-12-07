@@ -168,6 +168,28 @@ function new_excerpt_more($more) {
 }
 
 /**
- * Adds our new function to the default exerpt more function.
+ * Removes the category prefix from category archive pages.
+ */
+function prefix_category_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+}
+
+/**
+ * Removes the tag prefix from tag archive pages.
+ */
+function prefix_tag_title( $title ) {
+    if ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    }
+    return $title;
+}
+
+/**
+ * Adds our new function to the wordpress functions.
  */
 add_filter('excerpt_more', 'new_excerpt_more');
+add_filter( 'get_the_archive_title', 'prefix_category_title' );
+add_filter( 'get_the_archive_title', 'prefix_tag_title' );
