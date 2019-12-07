@@ -25,11 +25,12 @@
             </div><!-- container -->
         </section><!-- signup -->
 
-    <!-- ========== FOOTER ========== -->
+    
+        <!-- ========== FOOTER ========== -->
 	<footer>
             <div class="container">
                 <div class="col-sm-3">
-                    <p><a href="/"><img src="assets/img/logo.png" alt="Bootstrap to WordPress"></a></p>
+                    <p><a href="/"><img src="<?php bloginfo('stylesheet_directory') ?>/assets/img/logo.png" alt="Bootstrap to WordPress"></a></p>
                 </div><!-- end col -->
                 <div class="col-sm-6">
                     <nav>
@@ -48,7 +49,8 @@
             </div><!-- container -->
         </footer>
 
-    <!-- ========== MODAL ========== -->
+    
+        <!-- ========== MODAL ========== -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
