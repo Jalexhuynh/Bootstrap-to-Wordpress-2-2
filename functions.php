@@ -42,9 +42,10 @@ if ( ! function_exists( 'bootstrap2wordpress_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'bootstrap2wordpress' ),
+			'footer'  => esc_html__( 'Footer Menu', 'bootstrap2wordpress' ),
 		) );
 
 		/*
