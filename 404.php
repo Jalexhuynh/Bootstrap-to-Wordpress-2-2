@@ -87,7 +87,10 @@ get_header();
 						'title=Our Archives',
 						'before_title=<h4 class="widgettitle">',
 						'after_title=</h4>'
-						); ?>
+						);
+					?>
+
+					<p>Or just head back to the <a href="<?php echo esc_url( home_url('/') ); ?>">Home Page</a>.</p>
 
 				</div> <!-- .page-content -->
 			</div> <!-- .error-404 -->
