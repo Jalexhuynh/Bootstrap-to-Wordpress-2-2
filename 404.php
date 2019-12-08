@@ -79,6 +79,16 @@ get_header();
 						</ul>
 					</div> <!-- widget -->
 
+					<h3>Arhives</h3>
+					<p>You can always sort through our arhives.</p>
+
+					<?php the_widget(
+						'WP_Widget_Archives', 
+						'title=Our Archives',
+						'before_title=<h4 class="widgettitle">',
+						'after_title=</h4>'
+						); ?>
+
 				</div> <!-- .page-content -->
 			</div> <!-- .error-404 -->
 		</main> <!-- #content -->
